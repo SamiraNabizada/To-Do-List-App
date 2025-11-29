@@ -1,0 +1,259 @@
+/* ------------------ BASE ------------------ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-border;
+}
+
+:root {
+    --background: #000430;
+    --secondaryBackground: #1b1919;
+    --text: #fff;
+    --purple: #d05f14;
+    --teal: #24feee;
+}
+
+body {
+    background-image: url('Background.jpg'); 
+    background-size: cover;      
+    background-position: center; 
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    color: var(--text);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 500px;
+    background-color: rgba(23, 28, 72, 0.2); 
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 0 40px rgba(0,0,0,0.5);
+}
+
+/* ------------------ STATS ------------------ */
+.stats-container {
+    width: 100%;
+    padding: 20px;
+    border-radius: 20px;
+    border: 2px solid var(--purple);
+}
+
+.details h1 {
+    font-size: 28px;
+    margin-bottom: 5px;
+}
+
+.details p {
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.progress-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+#progressBar {
+    flex: 1;
+    height: 10px;
+    background-color: var(--secondaryBackground);
+    border-radius: 5px;
+}
+
+.progress {
+    width: 0%;
+    height: 10px;
+    background-color: var(--teal);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+#numbers {
+    width: 60px;
+    height: 60px;
+    background-color: var(--purple);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* ------------------ FORM ------------------ */
+form {
+    margin-top: 40px;
+    display: flex;
+    width: 100%;
+    gap: 10px;
+}
+
+input {
+    flex: 1;
+    padding: 16px;
+    background-color: var(--secondaryBackground);
+    border: 1px solid var(--purple);
+    border-radius: 10px;
+    outline: none;
+    color: var(--text);
+}
+
+button {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: var(--purple);
+    color: var(--text);
+    border: none;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+/* ------------------ TASK LIST ------------------ */
+#taskList {
+    list-style: none;
+    width: 100%;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.taskItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; 
+    background-color: var(--secondaryBackground);
+    padding: 12px;
+    border-radius: 10px;
+    word-break: break-word;
+}
+
+
+.task {
+    display: flex;
+    align-items: flex-start; 
+    gap: 12px;
+    flex: 1;
+    min-width: 0;
+}
+
+.task input[type="checkbox"] {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+}
+
+.task span {
+    display: block; 
+    overflow-wrap: break-word;
+    word-break: break-word;
+    white-space: normal;
+}
+
+.task.completed span {
+    text-decoration: line-through;
+    color: var(--teal);
+}
+
+
+.icons {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    flex-shrink: 0;
+    margin-left: 10px;
+}
+
+.icons img {
+    width: 26px;
+    height: 26px;
+    cursor: pointer;
+}
+
+/* ------------------ RESPONSIVE ------------------ */
+@media (max-width: 480px) {
+
+    .progress-wrapper {
+        width: 100%;
+        flex-wrap: nowrap;
+    }
+
+    #progressBar {
+        min-width: 120px;
+    }
+
+    .container {
+        padding: 20px;
+    }
+
+    .stats-container {
+        padding: 15px;
+    }
+
+    #numbers {
+        width: 50px;
+        height: 50px;
+        font-size: 16px;
+    }
+
+    form {
+        gap: 8px;
+    }
+
+    input {
+        padding: 14px;
+        font-size: 14px;
+    }
+
+    button {
+        width: 50px;
+        height: 50px;
+        font-size: 24px;
+    }
+
+    .taskItem {
+        padding: 10px;
+    }
+
+    .task span {
+        font-size: 14px;
+    }
+
+    .icons img {
+        width: 22px;
+        height: 22px;
+    }
+}
+
+@media (max-width: 350px) {
+    .container {
+        padding: 15px;
+    }
+
+    input {
+        padding: 12px;
+    }
+
+    button {
+        width: 45px;
+        height: 45px;
+        font-size: 22px;
+    }
+
+    .task span {
+        font-size: 13px;
+    }
+}

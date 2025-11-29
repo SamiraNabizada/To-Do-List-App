@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <div class="stats-container">
+        <div class="details">
+            <h1>To Do App</h1>
+            <p>Keep it up!</p>
+
+            <div class="progress-wrapper">
+                <div id="progressBar">
+                    <div class="progress"></div>
+                </div>
+                <div id="numbers">0/0</div>
+            </div>
+        </div>
+    </div>
+
+    <form id="taskForm">
+        <input type="text" id="taskInput" placeholder="Write Your Task...">
+        <button type="submit" id="newTask">+</button>
+    </form>
+
+    <ul id="taskList"></ul>
+
+</div>
+<!-- Confetti Library -->
+<script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
